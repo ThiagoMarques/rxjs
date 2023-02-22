@@ -1,5 +1,5 @@
 import { fromEvent, Observable, Subscriber } from "rxjs";
-import { map, filter, delay, switchMap } from "rxjs/operators";
+import { map, filter, delay, switchMap, retry } from "rxjs/operators";
 
 interface IMovie {
     title: string;
@@ -16,13 +16,21 @@ function load(url: string): Observable<any> {
         let xhr = new XMLHttpRequest();
 
         xhr.addEventListener('load', () => {
-            let data = JSON.parse(xhr.responseText)
-            Subscriber.next(data);
-            Subscriber.complete();
+            if (xhr.status == 200) {
+                let data = JSON.parse(xhr.responseText)
+                Subscriber.next(data);
+                Subscriber.complete();
+            } else {
+                Subscriber.error(xhr.statusText)
+            }
+
         })
         xhr.open('GET', url)
         xhr.send()
-    })
+    }).pipe(retry({
+        count: 3,
+        delay: 1000
+    }))
 }
 
 function renderMovie(movies: IMovie[]) {
@@ -38,6 +46,6 @@ click.pipe(
     switchMap(() => load('../movies.json'))
 ).subscribe({
     next: renderMovie,
-    error: (e: Error) => console.log(e),
+    error: (e: Error) => console.log(`Error: ${e}`),
     complete: () => console.log()
 })
