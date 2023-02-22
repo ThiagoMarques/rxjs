@@ -16,6 +16,7 @@ let source = fromEvent(document, 'mousemove').pipe(
     delay(500)
 )
 
+
 function onNext(value: mouseTrack) {
     console.log(value);
     circle.style.left = `${value.x}px`;
