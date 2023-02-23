@@ -3,8 +3,8 @@
     #sidenav
     fixedInViewport="true"
     class="sidenav"
-    opened="true"
-    mode="push"
+    [opened]="!isSmallScreen"
+    [mode]="sideNavMode"
   >
     <span>Teste</span>
   </mat-sidenav>

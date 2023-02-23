@@ -8,23 +8,15 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  /* !: pode ser nulo ou não */
-  @ViewChild(MatSidenav) sidenav!: MatSidenav;
-  showFiller = false;
+  isSmallScreen = false;
   constructor(private breakpoint: BreakpointObserver) { }
 
   ngAfterContentInit(): void {
-    this.breakpoint.observe(['(max-width: 800px)']).subscribe({
-      next: (res) => {
-        if (res.matches) {
-          this.sidenav.mode = 'over';
-          this.sidenav.close();
-        } else {
-          this.sidenav.mode = 'side';
-          this.sidenav.open();
-        }
-      }
-    })
+    /* Trabalhando com operador do RxJS para eliminar if - subscribe direto*/
+    this.breakpoint.observe(['(max-width: 800px)']).subscribe((res) => this.isSmallScreen = res.matches)
+  }
 
+  get sideNavMode() {
+    return this.isSmallScreen ? 'over' : 'side';
   }
 }
