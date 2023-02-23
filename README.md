@@ -11,6 +11,8 @@ O projeto possui 4 branches:
 
 - xmlHttpRequest: Exemplos com HTTP
 
+- angularMaterial: Uso do RxJS com Angular Material
+
 
 
 
