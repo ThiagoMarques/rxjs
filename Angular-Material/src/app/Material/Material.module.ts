@@ -10,7 +10,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
@@ -36,7 +36,13 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter'
   declarations: [],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline', floatLabel: 'always' } },
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-br' }
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-br' },
+    {
+      provide: MAT_SNACK_BAR_DATA, useValue: {
+        duration: 2500,
+
+      }
+    }
   ]
 })
 export class MaterialModule { }
