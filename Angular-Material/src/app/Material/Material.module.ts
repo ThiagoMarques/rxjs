@@ -11,7 +11,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
   exports: [MatSlideToggleModule, MatToolbarModule, MatIconModule, MatButtonModule, MatSidenavModule, MatInputModule],
   declarations: [],
   providers: [{
-    provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' }
+    provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline', floatLabel: 'always' }
   }]
 })
 export class MaterialModule { }
