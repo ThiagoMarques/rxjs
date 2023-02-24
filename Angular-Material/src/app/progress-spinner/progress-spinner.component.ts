@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, map, takeWhile } from 'rxjs';
+import { ProgressBarMode } from '@angular/material/progress-bar';
+import { concat, interval, map, take, takeWhile, tap } from 'rxjs';
 
 @Component({
   selector: 'app-progress-spinner',
@@ -8,11 +9,24 @@ import { interval, map, takeWhile } from 'rxjs';
 })
 export class ProgressSpinnerComponent implements OnInit {
   public loadingPercent = 50
+  public queryValue = 0
+  public queryMode: ProgressBarMode = 'query'
 
   constructor() { }
 
   ngOnInit() {
     this.loadingProgress(500).subscribe(i => this.loadingPercent = i)
+    /* Concat - Executa o primeiro observable depois o segundo*/
+    concat(
+      interval(2000).
+        pipe(
+          /* Só deve pegar os 'dois segundos' uma vez */
+          take(1),
+          /*  */
+          tap(_ => (this.queryMode = 'determinate'))
+        ),
+      this.loadingProgress(500)
+    ).subscribe(i => this.queryValue = i)
   }
 
   loadingProgress(speed: number) {
