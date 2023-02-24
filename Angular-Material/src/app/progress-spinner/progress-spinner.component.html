@@ -2,14 +2,18 @@
 
 <mat-progress-bar
   mode="determinate"
-  [value]=""
+  [value]="loadingPercent"
   color="primary"
 ></mat-progress-bar>
 <br />
 <mat-progress-bar
   mode="determinate"
-  [value]=""
+  [value]="loadingPercent"
   color="accent"
 ></mat-progress-bar>
 <br />
-<mat-progress-bar mode="determinate" [value]="" color="warn"></mat-progress-bar>
+<mat-progress-bar
+  mode="determinate"
+  [value]="loadingPercent"
+  color="warn"
+></mat-progress-bar>
