@@ -1,8 +1,12 @@
-<h1>Dialog Modal</h1>
-<button mat-button (click)="closeDialog()">
-  Close <mat-icon>close</mat-icon>
-</button>
-
-<button mat-button [mat-dialog-close] color="warn">
-  Close <mat-icon>close</mat-icon>
-</button>
+<h1 mat-dialog-title>Dialog Modal - {{ data }}</h1>
+<mat-dialog-content>
+  <p>Conteúdo de teste</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color="primary" (click)="closeDialog()">
+    Close <mat-icon>close</mat-icon>
+  </button>
+  <button mat-button [mat-dialog-close] color="warn">
+    Close <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>

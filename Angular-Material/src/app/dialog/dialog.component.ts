@@ -11,7 +11,11 @@ export class DialogComponent {
   constructor(public dialog: MatDialog) { }
 
   public openDialog() {
-    this.dialog.open(DialogModalComponent)
+    this.dialog.open(DialogModalComponent, {
+      data: 'DataTest',
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '2000ms'
+    })
   }
 
 }
