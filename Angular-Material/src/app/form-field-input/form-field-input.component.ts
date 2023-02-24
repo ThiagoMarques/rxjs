@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-field-input.component.scss']
 })
 export class FormFieldInputComponent {
-
+  public value = '';
 }

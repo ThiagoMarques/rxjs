@@ -1,9 +1,47 @@
 <h1>Inputs</h1>
 
-<mat-form-field
-  ><mat-label> Name </mat-label><input type="text" matInput placeholder="name"
-/></mat-form-field>
+<mat-form-field>
+  <mat-label> Name </mat-label>
+  <input type="text" matInput placeholder="name" />
+</mat-form-field>
 <br />
 <mat-form-field>
-  <mat-label> Name </mat-label><input type="text" matInput placeholder="name"
-/></mat-form-field>
+  <mat-label> Name </mat-label>
+  <input type="text" matInput placeholder="name" />
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+</mat-form-field>
+<br />
+<mat-form-field>
+  <mat-label> Name </mat-label>
+  <input type="text" matInput placeholder="name" [(ngModel)]="value" />
+  <button
+    *ngIf="value"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="(value)"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<br />
+<mat-form-field>
+  <mat-label> Name </mat-label>
+  <input #userName1 type="text" matInput placeholder="name" maxlength="10" />
+  <mat-hint align="start">Apenas {{ userName1.maxLength }} caracteres</mat-hint>
+</mat-form-field>
+<br />
+<mat-form-field>
+  <mat-label> Name </mat-label>
+  <input #userName2 type="text" matInput placeholder="name" maxlength="10" />
+  <mat-hint align="end">Apenas {{ userName2.maxLength }} caracteres</mat-hint>
+</mat-form-field>
+<br />
+<mat-form-field>
+  <mat-label> Name </mat-label>
+  <input #userName3 type="text" matInput placeholder="name" maxlength="10" />
+  <mat-hint align="start"
+    >Apenas {{ userName3.value.length }} /
+    {{ userName3.maxLength }} caracteres</mat-hint
+  >
+</mat-form-field>
