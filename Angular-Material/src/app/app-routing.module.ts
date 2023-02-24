@@ -1,3 +1,4 @@
+import { SnackbarComponent } from './snackbar/snackbar.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'formFieldInput', component: FormFieldInputComponent },
   { path: 'progressSpinner', component: ProgressSpinnerComponent },
   { path: 'tabs', component: TabsComponent },
-  { path: 'datepicker', component: DatepickerComponent }
+  { path: 'datepicker', component: DatepickerComponent },
+  { path: 'snackbar', component: SnackbarComponent }
 ];
 
 @NgModule({
