@@ -1,0 +1,126 @@
+<h1>Simple Tabs</h1>
+
+<mat-tab-group
+  [disableRipple]="false"
+  mat-align-tabs="start"
+  animationDuration="1000ms"
+>
+  <mat-tab label="tab1"> tab body 1 </mat-tab>
+  <mat-tab label="tab2"> tab body 2</mat-tab>
+  <mat-tab label="tab3"> tab body 3</mat-tab>
+</mat-tab-group>
+<br />
+<mat-tab-group
+  [disableRipple]="false"
+  mat-align-tabs="center"
+  animationDuration="2000ms"
+>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>Person
+    </ng-template>
+    Person Example
+  </mat-tab>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>Settings
+    </ng-template>
+    Setting Example
+  </mat-tab>
+</mat-tab-group>
+<br />
+<mat-tab-group
+  [disableRipple]="false"
+  mat-align-tabs="end"
+  animationDuration="3000ms"
+>
+  <mat-tab label="tab1"> tab body 1 </mat-tab>
+  <mat-tab label="tab2"> tab body 2</mat-tab>
+  <mat-tab label="tab3"> tab body 3</mat-tab>
+</mat-tab-group>
+
+<h1>Stretch and Below</h1>
+<!-- Ocupa todo espaço -->
+
+<mat-tab-group
+  mat-stretch-tabs
+  [disableRipple]="false"
+  mat-align-tabs="center"
+  animationDuration="500ms"
+>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>Person
+    </ng-template>
+    Person Example
+  </mat-tab>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>Settings
+    </ng-template>
+    Setting Example
+  </mat-tab>
+</mat-tab-group>
+<br />
+<mat-tab-group
+  mat-stretch-tabs
+  [disableRipple]="false"
+  mat-align-tabs="center"
+  animationDuration="500ms"
+  class="mat-elevation-z4"
+>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>Person
+    </ng-template>
+    Person Example
+  </mat-tab>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>Settings
+    </ng-template>
+    Setting Example
+  </mat-tab>
+</mat-tab-group>
+<br />
+<mat-tab-group
+  mat-stretch-tabs
+  [disableRipple]="false"
+  mat-align-tabs="center"
+  animationDuration="500ms"
+  headerPosition="below"
+>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>Person
+    </ng-template>
+    Person Example
+  </mat-tab>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>Settings
+    </ng-template>
+    Setting Example
+  </mat-tab>
+</mat-tab-group>
+<br />
+<mat-tab-group
+  mat-stretch-tabs
+  [disableRipple]="false"
+  mat-align-tabs="center"
+  animationDuration="500ms"
+  color="warn"
+>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>Person
+    </ng-template>
+    Person Example
+  </mat-tab>
+  <mat-tab label="tab1">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>Settings
+    </ng-template>
+    Setting Example
+  </mat-tab>
+</mat-tab-group>
