@@ -1,0 +1,21 @@
+<!-- <h1>Datepicker touchUi False</h1>
+<mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker startAt="startDate" touchUi="false"></mat-datepicker>
+</mat-form-field>
+<br /> -->
+<h1>Datepicker touchUi True</h1>
+<mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker
+    #picker
+    startAt="startDate"
+    [touchUi]="isTouchDevice"
+  ></mat-datepicker>
+</mat-form-field>
