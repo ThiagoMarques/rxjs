@@ -12,13 +12,18 @@ import { MatSort } from '@angular/material/sort';
 export class DatatableComponent implements AfterViewInit {
 
   public dataSource = new MatTableDataSource(DATA_MOVIES);
-  public displayedNameColumn = ['name', 'category', 'rating', 'year', 'director'];
+  public displayedNameColumns = ['name', 'category', 'rating', 'year', 'director'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator
     this.dataSource.sort = this.sort
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }
