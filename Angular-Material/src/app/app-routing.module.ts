@@ -1,3 +1,4 @@
+import { DialogComponent } from './dialog/dialog.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'progressSpinner', component: ProgressSpinnerComponent },
   { path: 'tabs', component: TabsComponent },
   { path: 'datepicker', component: DatepickerComponent },
-  { path: 'snackbar', component: SnackbarComponent }
+  { path: 'snackbar', component: SnackbarComponent },
+  { path: 'dialog', component: DialogComponent }
 ];
 
 @NgModule({
