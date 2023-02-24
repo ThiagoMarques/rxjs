@@ -11,6 +11,6 @@ export class DialogModalComponent {
     @Inject(MAT_DIALOG_DATA) public data: string) { }
 
   public closeDialog() {
-    this.matDialogRef.close();
+    this.matDialogRef.close('Modal Fechada!');
   }
 }

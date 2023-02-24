@@ -11,11 +11,16 @@ export class DialogComponent {
   constructor(public dialog: MatDialog) { }
 
   public openDialog() {
-    this.dialog.open(DialogModalComponent, {
+    const dialogRef = this.dialog.open(DialogModalComponent, {
       data: 'DataTest',
       enterAnimationDuration: '1000ms',
       exitAnimationDuration: '2000ms'
-    })
+    });
+    dialogRef.afterClosed().subscribe(
+      result => {
+        console.log('Result = ', result)
+      }
+    )
   }
 
 }
