@@ -5,10 +5,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
-  exports: [MatSlideToggleModule, MatToolbarModule, MatIconModule, MatButtonModule, MatSidenavModule, MatInputModule],
+  exports: [MatSlideToggleModule, MatToolbarModule, MatIconModule, MatButtonModule, MatSidenavModule, MatInputModule, MatListModule],
   declarations: [],
   providers: [{
     provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline', floatLabel: 'always' }
