@@ -10,11 +10,14 @@ import { concat, interval, map, take, takeWhile, tap } from 'rxjs';
 export class ProgressSpinnerComponent implements OnInit {
   public loadingPercent = 50
   public queryValue = 0
+  public bufferValue = 0
   public queryMode: ProgressBarMode = 'query'
+  public currentPlayback = 0
 
   constructor() { }
 
   ngOnInit() {
+    this.loadingProgress(250).subscribe(i => this.currentPlayback = i)
     this.loadingProgress(500).subscribe(i => this.loadingPercent = i)
     /* Concat - Executa o primeiro observable depois o segundo*/
     concat(

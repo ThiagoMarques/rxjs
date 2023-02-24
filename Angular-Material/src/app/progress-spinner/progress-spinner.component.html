@@ -26,3 +26,12 @@
   [mode]="queryMode"
   color="warn"
 ></mat-progress-bar>
+
+<h1>Playback</h1>
+
+<mat-progress-bar
+  mode="buffer"
+  [value]="loadingPercent"
+  [bufferValue]="currentPlayback"
+  color="warn"
+></mat-progress-bar>
