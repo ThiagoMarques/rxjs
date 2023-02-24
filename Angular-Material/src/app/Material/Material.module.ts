@@ -12,6 +12,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSnackBarModule, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
@@ -33,7 +34,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter'
     MatNativeDateModule,
     MatMomentDateModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   declarations: [],
   providers: [

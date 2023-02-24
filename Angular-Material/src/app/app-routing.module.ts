@@ -1,3 +1,4 @@
+import { DatatableComponent } from './datatable/datatable.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'tabs', component: TabsComponent },
   { path: 'datepicker', component: DatepickerComponent },
   { path: 'snackbar', component: SnackbarComponent },
-  { path: 'dialog', component: DialogComponent }
+  { path: 'dialog', component: DialogComponent },
+  { path: 'datatable', component: DatatableComponent }
 ];
 
 @NgModule({

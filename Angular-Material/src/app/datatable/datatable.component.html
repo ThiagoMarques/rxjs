@@ -1,0 +1,36 @@
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let movie"> {{ movie.name }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="category">
+    <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+    <mat-cell *matCellDef="let movie"> {{ movie.category }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="rating">
+    <mat-header-cell *matHeaderCellDef> Avaliação </mat-header-cell>
+    <mat-cell *matCellDef="let movie"> {{ movie.rating }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="year">
+    <mat-header-cell *matHeaderCellDef> Ano </mat-header-cell>
+    <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="director">
+    <mat-header-cell *matHeaderCellDef> Diretor(es) </mat-header-cell>
+    <mat-cell *matCellDef="let movie"> {{ movie.director }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row
+    *matHeaderRowDef="['name', 'category', 'rating', 'year', 'director']"
+  ></mat-header-row>
+  <mat-row
+    *matRowDef="
+      let movie;
+      columns: ['name', 'category', 'rating', 'year', 'director']
+    "
+  ></mat-row>
+</mat-table>
